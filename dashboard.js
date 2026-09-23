@@ -152,24 +152,81 @@ createApp({
 
     async function kuroSync() {
       message.value = "";
+      // 1) local Express API can harvest this machine browser
       try {
         const res = await fetch("/api/kuro/sync", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: "{}",
         });
-        const data = await res.json();
-        message.value = data.message || data.action || "同步完成";
-        messageKind.value = data.ok === false ? "bad" : "ok";
-        applyTokenInfo(data.token || {});
-        await refresh();
-      } catch (e) {
-        message.value =
-          "远程无法读取本机浏览器：请在本地 EXE/客户端点「同步浏览器 token」，或打开库街区登录。";
-        messageKind.value = "warn";
-        window.open("https://www.kurobbs.com/", "_blank");
-      }
+        if (res.ok) {
+          const data = await res.json();
+          message.value = data.message || data.action || "同步完成";
+          messageKind.value = data.ok === false ? "bad" : "ok";
+          applyTokenInfo(data.token || {});
+          await refresh();
+          return;
+        }
+      } catch (_) {}
+      // 2) GitHub Pages cannot read other-site cookies — guide paste/bookmarklet
+      message.value =
+        "网页无法直接读取库街区登录态（浏览器同源限制）。请用「抓取 Token 书签」在已登录的库街区页点击，再回此页粘贴。";
+      messageKind.value = "warn";
+      tab.value = "settings";
     }
+
+    function pasteKuroToken() {
+      const tok = prompt(
+        "粘贴库街区 token（F12 → Network → 任意请求头 token，或书签脚本已复制）",
+        localStorage.getItem("KURO_TOKEN") || ""
+      );
+      if (!tok) return;
+      const t = tok.trim();
+      if (!t.startsWith("eyJ") || t.split(".").length !== 3) {
+        message.value = "格式不像 JWT token";
+        messageKind.value = "bad";
+        return;
+      }
+      localStorage.setItem("KURO_TOKEN", t);
+      try {
+        const part = t.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
+        const pad = "=".repeat((4 - (part.length % 4)) % 4);
+        const payload = JSON.parse(decodeURIComponent(escape(atob(part + pad))));
+        const created = payload.created;
+        let detail = "userId=" + payload.userId;
+        if (typeof created === "number") {
+          const age = ((Date.now() - created / 1000) / 86400).toFixed(2);
+          detail += " · " + age + "天前签发";
+        }
+        applyTokenInfo({ kuro_status: "ok", kuro_detail: detail + " · 已保存到本机浏览器" });
+      } catch (_) {
+        applyTokenInfo({ kuro_status: "unknown", kuro_detail: "已保存（解析失败）" });
+      }
+      message.value =
+        "token 已保存到本机浏览器。云端定时请用本地执行 tools/update_kuro_secret.py，或在 EXE 设置里同步后保存。";
+      messageKind.value = "ok";
+    }
+
+    function loadBookmarklet() {
+      const js =
+        "javascript:(function(){var t='';var ks=Object.keys(localStorage);for(var i=0;i<ks.length;i++){var v=localStorage.getItem(ks[i])||'';if(v.indexOf('eyJ')===0&&v.split('.').length===3)t=v;}if(!t){alert('未找到 token，请先登录 www.kurobbs.com');return;}if(navigator.clipboard){navigator.clipboard.writeText(t);}else{prompt('复制 token:',t);}alert('Token 已复制/显示。\n请打开 Dashboard → 设置 → 粘贴 Token。');})()";
+      prompt("把下面地址栏脚本存为书签（名称：抓库街区Token），在已登录的库街区页面点击：", js);
+    }
+
+    // accept token via #kuro= from bookmarklet redirect
+    (function () {
+      const h = location.hash || "";
+      const m = h.match(/kuro=([^&]+)/);
+      if (m) {
+        try {
+          const t = decodeURIComponent(m[1]);
+          if (t.startsWith("eyJ")) {
+            localStorage.setItem("KURO_TOKEN", t);
+            history.replaceState(null, "", location.pathname + location.search);
+          }
+        } catch (_) {}
+      }
+    })();
 
     function openKuroLogin() {
       window.open("https://www.kurobbs.com/", "_blank");
@@ -480,6 +537,8 @@ createApp({
       setupToken,
       clearToken,
       kuroSync,
+      pasteKuroToken,
+      loadBookmarklet,
       openKuroLogin,
       refreshTokenStatus,
     };
