@@ -22,6 +22,7 @@
       <button :class="{active: tab==='home'}" @click="tab='home'">主页</button>
       <button :class="{active: tab==='history'}" @click="tab='history'">历史</button>
       <button :class="{active: tab==='rewards'}" @click="tab='rewards'">奖励</button>
+      <button :class="{active: tab==='settings'}" @click="tab='settings'">设置</button>
       <button :class="{active: tab==='about'}" @click="tab='about'">关于</button>
     </nav>
 
@@ -189,6 +190,46 @@
             </tr>
           </tbody>
         </table>
+      </section>
+    </template>
+
+    <!-- SETTINGS -->
+    <template v-else-if="tab==='settings'">
+      <section class="card">
+        <h2>设置</h2>
+        <div class="hint">远程签到凭据仅保存在本机浏览器；Cookie/Token 不会写入公开仓库</div>
+
+        <h2 class="mt8">GitHub Token（远程手动签到）</h2>
+        <div class="hint">用于触发 Actions 签到；建议 classic PAT + <code>actions:write</code> / repo</div>
+        <div class="actions">
+          <button class="btn btn-secondary" @click="setupToken">设置 / 更新 Token</button>
+          <button class="btn btn-secondary" @click="clearToken">清除 Token</button>
+          <a class="btn btn-secondary" href="https://github.com/settings/tokens" target="_blank" rel="noopener">去创建 PAT</a>
+        </div>
+        <p class="dim mt8">当前：{{ tokenSaved ? '已保存（仅本机浏览器）' : '未设置' }}</p>
+
+        <h2 class="mt8">库街区登录态</h2>
+        <div class="hint">JWT 会过期；浏览器保持登录可同步/续期</div>
+        <div class="chip" style="border-left-color:#a78bfa">
+          <div>
+            <div class="title">{{ tokenInfo.kuro_status }}</div>
+            <div class="meta">{{ tokenInfo.kuro_detail || '—' }}</div>
+          </div>
+          <div class="st" :class="tokenInfo.kuro_status==='ok'?'ok':(tokenInfo.kuro_status==='invalid'?'bad':'warn')">
+            {{ tokenInfo.kuro_status }}
+          </div>
+        </div>
+        <div class="actions mt8">
+          <button class="btn btn-secondary" @click="kuroSync">同步浏览器 token</button>
+          <button class="btn btn-secondary" @click="openKuroLogin">打开库街区登录</button>
+          <button class="btn btn-secondary" @click="refreshTokenStatus">刷新状态</button>
+        </div>
+
+        <h2 class="mt8">本地客户端</h2>
+        <div class="hint">
+          完整同步/保存 Cookie 请用桌面 EXE「设置」页。<br />
+          开发模式：<code>node server.js</code> → <code>http://127.0.0.1:8787</code>
+        </div>
       </section>
     </template>
 

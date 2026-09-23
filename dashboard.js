@@ -120,6 +120,7 @@ createApp({
     const series = ref([]);
     const logText = ref("");
     const tokenInfo = ref({ kuro_status: "unknown", kuro_detail: "未检测" });
+    const tokenSaved = ref(!!localStorage.getItem("GH_TOKEN"));
 
     function applyTokenInfo(info) {
       if (info && typeof info === "object") tokenInfo.value = { ...tokenInfo.value, ...info };
@@ -319,9 +320,17 @@ createApp({
       );
       if (token) {
         localStorage.setItem("GH_TOKEN", token.trim());
+        tokenSaved.value = true;
         message.value = "Token 已保存在浏览器本地";
         messageKind.value = "ok";
       }
+    }
+
+    function clearToken() {
+      localStorage.removeItem("GH_TOKEN");
+      tokenSaved.value = false;
+      message.value = "已清除本机浏览器中的 GitHub Token";
+      messageKind.value = "ok";
     }
 
     function drawChart() {
@@ -462,12 +471,14 @@ createApp({
       series,
       logText,
       tokenInfo,
+      tokenSaved,
       rateClass,
       statusText,
       statusTone,
       refresh,
       runCheckin,
       setupToken,
+      clearToken,
       kuroSync,
       openKuroLogin,
       refreshTokenStatus,
