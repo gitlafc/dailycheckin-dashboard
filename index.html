@@ -46,6 +46,25 @@
         </div>
       </section>
 
+      <section class="card">
+        <h2>库街区登录态</h2>
+        <div class="hint">JWT 会过期 · 浏览器保持登录可自动续期 · 过期后需重新登录一次</div>
+        <div class="chip" style="border-left-color:#a78bfa">
+          <div>
+            <div class="title">当前状态：{{ tokenInfo.kuro_status }}</div>
+            <div class="meta">{{ tokenInfo.kuro_detail || '—' }}</div>
+          </div>
+          <div class="st" :class="tokenInfo.kuro_status==='ok'?'ok':(tokenInfo.kuro_status==='invalid'?'bad':'warn')">
+            {{ tokenInfo.kuro_status }}
+          </div>
+        </div>
+        <div class="actions mt8">
+          <button class="btn btn-secondary" :disabled="busy" @click="kuroSync">同步浏览器 token</button>
+          <button class="btn btn-secondary" @click="openKuroLogin">打开库街区登录</button>
+          <button class="btn btn-secondary" @click="refreshTokenStatus">刷新状态</button>
+        </div>
+      </section>
+
       <section class="kpi-grid">
         <div class="kpi">
           <div class="label">已签</div>

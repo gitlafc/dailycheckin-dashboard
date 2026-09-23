@@ -119,6 +119,62 @@ createApp({
     const history = ref([]);
     const series = ref([]);
     const logText = ref("");
+    const tokenInfo = ref({ kuro_status: "unknown", kuro_detail: "未检测" });
+
+    function applyTokenInfo(info) {
+      if (info && typeof info === "object") tokenInfo.value = { ...tokenInfo.value, ...info };
+    }
+
+    async function refreshTokenStatus() {
+      // Local API first
+      try {
+        const res = await fetch("/api/health", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          applyTokenInfo({
+            kuro_status: data.kuro_status || "unknown",
+            kuro_detail: data.kuro_detail || (data.output || "").split("\n")[0] || "",
+            source: "api",
+          });
+          return;
+        }
+      } catch (_) {}
+      // Snapshot field
+      try {
+        const res = await fetch("data/overview.json", { cache: "no-store" });
+        if (res.ok) {
+          const data = await res.json();
+          applyTokenInfo(data.token || { kuro_status: "snapshot", kuro_detail: "见签到快照" });
+        }
+      } catch (_) {}
+    }
+
+    async function kuroSync() {
+      message.value = "";
+      try {
+        const res = await fetch("/api/kuro/sync", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: "{}",
+        });
+        const data = await res.json();
+        message.value = data.message || data.action || "同步完成";
+        messageKind.value = data.ok === false ? "bad" : "ok";
+        applyTokenInfo(data.token || {});
+        await refresh();
+      } catch (e) {
+        message.value =
+          "远程无法读取本机浏览器：请在本地 EXE/客户端点「同步浏览器 token」，或打开库街区登录。";
+        messageKind.value = "warn";
+        window.open("https://www.kurobbs.com/", "_blank");
+      }
+    }
+
+    function openKuroLogin() {
+      window.open("https://www.kurobbs.com/", "_blank");
+      message.value = "请在浏览器登录 www.kurobbs.com，再点「同步浏览器 token」";
+      messageKind.value = "ok";
+    }
 
     const rateClass = computed(() => {
       const r = overview.value.rate;
@@ -389,6 +445,7 @@ createApp({
 
     onMounted(() => {
       refresh();
+      refreshTokenStatus();
       window.addEventListener("resize", () => nextTick(drawChart));
     });
 
@@ -404,12 +461,16 @@ createApp({
       history,
       series,
       logText,
+      tokenInfo,
       rateClass,
       statusText,
       statusTone,
       refresh,
       runCheckin,
       setupToken,
+      kuroSync,
+      openKuroLogin,
+      refreshTokenStatus,
     };
   },
 }).mount("#app");
