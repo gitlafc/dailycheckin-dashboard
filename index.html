@@ -1,0 +1,194 @@
+<!-- AI生成 -->
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DailyCheckin Dashboard</title>
+  <link rel="stylesheet" href="./dashboard.css" />
+  <script src="./vue.global.prod.js"></script>
+</head>
+<body>
+<p data-aigc-mark="1" style="margin:0 0 8px;font-size:10px;line-height:1.3;color:#6b6560;font-weight:400;">AI生成</p>
+
+  <div id="app">
+    <header class="banner">
+      <h1>DailyCheckin</h1>
+      <p>每日签到 Dashboard · 库街区 / 米游社</p>
+      <div class="sub">Vue 3 · Express UI · 手动签到 · 奖励图标 · 每日 10:00 GitHub Actions</div>
+    </header>
+
+    <nav class="nav">
+      <button :class="{active: tab==='home'}" @click="tab='home'">主页</button>
+      <button :class="{active: tab==='history'}" @click="tab='history'">历史</button>
+      <button :class="{active: tab==='rewards'}" @click="tab='rewards'">奖励</button>
+      <button :class="{active: tab==='about'}" @click="tab='about'">关于</button>
+    </nav>
+
+    <div v-if="offline" class="alert">
+      当前为离线演示模式。启动 API 后可手动签到与读取实时数据：
+      <code>node server.js</code> → 打开 http://127.0.0.1:8787
+    </div>
+    <div v-if="message" :class="['alert', messageKind]">{{ message }}</div>
+
+    <!-- HOME -->
+    <template v-if="tab==='home'">
+      <section class="card">
+        <h2>快捷操作</h2>
+        <div class="actions">
+          <button class="btn btn-primary" :disabled="busy" @click="runCheckin('all')">
+            {{ busy ? '签到中…' : '⚡ 一键签到' }}
+          </button>
+          <button class="btn btn-secondary" :disabled="busy" @click="runCheckin('kuro')">仅库街区</button>
+          <button class="btn btn-secondary" :disabled="busy" @click="runCheckin('mihoyo')">仅米游社</button>
+          <button class="btn btn-secondary" :disabled="busy" @click="refresh">刷新</button>
+          <button class="btn btn-secondary" @click="setupToken">设置 Token</button>
+        </div>
+      </section>
+
+      <section class="kpi-grid">
+        <div class="kpi">
+          <div class="label">已签</div>
+          <div class="value ok">{{ overview.signed }}</div>
+        </div>
+        <div class="kpi">
+          <div class="label">漏签</div>
+          <div class="value" :class="overview.missed ? 'bad' : 'muted'">{{ overview.missed }}</div>
+        </div>
+        <div class="kpi">
+          <div class="label">应签</div>
+          <div class="value acc">{{ overview.total }}</div>
+        </div>
+        <div class="kpi">
+          <div class="label">完成率</div>
+          <div class="value" :class="rateClass">{{ overview.rate }}%</div>
+        </div>
+      </section>
+
+      <section class="card mt8">
+        <h2>仪表盘</h2>
+        <div class="hint">完成分布 · 按平台 · 近 7 日</div>
+        <canvas id="dash" class="chart" width="1000" height="320"></canvas>
+      </section>
+
+      <section class="card">
+        <h2>平台状态</h2>
+        <div v-for="p in platforms" :key="p.id" class="chip" :style="{borderLeftColor: p.color}">
+          <div>
+            <div class="title">{{ p.name }}</div>
+            <div class="meta">{{ p.detail }}</div>
+          </div>
+          <div class="st" :class="p.tone">{{ p.status }}</div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>今日奖励</h2>
+        <div class="hint">官方 / 社区物品图标</div>
+        <div v-if="!rewards.length" class="dim">暂无奖励记录</div>
+        <div class="rewards">
+          <div v-for="r in rewards" :key="r.reward + r.source" class="reward-card">
+            <div class="img">
+              <img v-if="r.icon" :src="r.icon" :alt="r.reward" />
+              <span v-else>{{ r.emoji || '🎁' }}</span>
+            </div>
+            <div class="name">{{ r.reward }}</div>
+            <div class="src">{{ r.source || r.category }}</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>执行日志</h2>
+        <pre class="log">{{ logText || '（暂无日志）' }}</pre>
+      </section>
+    </template>
+
+    <!-- HISTORY -->
+    <template v-else-if="tab==='history'">
+      <section class="card">
+        <h2>签到历史</h2>
+        <div class="hint">最近记录（含奖品）</div>
+        <table>
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>平台</th>
+              <th>项目</th>
+              <th>状态</th>
+              <th>奖励</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="(h, i) in history" :key="i">
+              <td class="dim">{{ h.ts }}</td>
+              <td>{{ h.platform }}</td>
+              <td>{{ h.account ? h.account + ' · ' : '' }}{{ h.game_name }}</td>
+              <td>
+                <span class="badge" :class="statusTone(h.status)">{{ statusText(h.status) }}</span>
+              </td>
+              <td>{{ h.reward || '—' }}</td>
+            </tr>
+            <tr v-if="!history.length">
+              <td colspan="5" class="dim">暂无历史</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </template>
+
+    <!-- REWARDS -->
+    <template v-else-if="tab==='rewards'">
+      <section class="card">
+        <h2>奖励图标总览</h2>
+        <div class="hint">来自签到结果与离线图标包</div>
+        <table>
+          <thead>
+            <tr>
+              <th>图标</th>
+              <th>奖励</th>
+              <th>类型</th>
+              <th>来源</th>
+              <th>图源</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="r in rewards" :key="'t' + r.reward">
+              <td>
+                <span class="icon-cell">
+                  <img v-if="r.icon" :src="r.icon" :alt="r.reward" />
+                  <span v-else>{{ r.emoji || '🎁' }}</span>
+                </span>
+              </td>
+              <td>{{ r.reward }}</td>
+              <td class="muted">{{ r.category }}</td>
+              <td>{{ r.platform }}<template v-if="r.account"> · {{ r.account }}</template></td>
+              <td class="dim">{{ r.source }}</td>
+            </tr>
+            <tr v-if="!rewards.length">
+              <td colspan="5" class="dim">暂无奖励</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </template>
+
+    <!-- ABOUT -->
+    <template v-else>
+      <section class="card">
+        <h2>关于</h2>
+        <p class="muted">
+          Vue 3 + Express 风格 UI 的 DailyCheckin 控制台。可查看签到统计、奖励图标、历史日志，
+          并在 API 可用时手动触发签到。
+        </p>
+        <p class="dim">
+          定时签到由 GitHub Actions 每日 10:00（北京时间）执行。
+          API：<code>GET /api/overview</code> · <code>POST /api/checkin</code>
+        </p>
+      </section>
+    </template>
+  </div>
+
+  <script src="./dashboard.js"></script>
+</body>
+</html>

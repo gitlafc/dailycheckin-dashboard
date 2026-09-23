@@ -1,2 +1,3 @@
-# dailycheckin-dashboard
-DailyCheckin remote dashboard (static + status sync)
+﻿# DailyCheckin Dashboard
+Static remote dashboard for DailyCheckin.
+Status snapshot: `data/overview.json` (no credentials).
