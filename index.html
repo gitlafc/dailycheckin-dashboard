@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>DailyCheckin Dashboard</title>
-  <link rel="stylesheet" href="./dashboard.css" />
-  <script src="./vue.global.prod.js"></script>
+  <link rel="stylesheet" href="./dashboard.css?v=2" />
+  <script src="./vue.global.prod.js?v=1"></script>
 </head>
 <body>
 <p data-aigc-mark="1" style="margin:0 0 8px;font-size:10px;line-height:1.3;color:#6b6560;font-weight:400;">AI生成</p>
@@ -220,12 +220,15 @@
             {{ tokenInfo.kuro_status }}
           </div>
         </div>
+        <div class="hint">Token 输入</div>
+        <input v-model="kuroTokenInput" placeholder="粘贴 eyJ 开头的库街区 JWT"
+               style="width:100%;background:#0e1628;color:#f4f7ff;border:1px solid #27354f;border-radius:8px;padding:8px;font-family:Consolas,monospace" />
         <div class="actions mt8">
-          <button class="btn btn-secondary" @click="kuroSync">同步（本机 API）</button>
-          <button class="btn btn-secondary" @click="pasteKuroToken">粘贴 Token</button>
-          <button class="btn btn-secondary" @click="loadBookmarklet">抓取 Token 书签</button>
-          <button class="btn btn-secondary" @click="openKuroLogin">打开库街区</button>
-          <button class="btn btn-secondary" @click="refreshTokenStatus">刷新状态</button>
+          <button type="button" class="btn btn-secondary" @click="pasteKuroToken">保存 Token</button>
+          <button type="button" class="btn btn-secondary" @click="kuroSync">同步（本机）</button>
+          <button type="button" class="btn btn-secondary" @click="loadBookmarklet">抓取 Token 书签</button>
+          <button type="button" class="btn btn-secondary" @click="openKuroLogin">打开库街区</button>
+          <button type="button" class="btn btn-secondary" @click="refreshTokenStatus">刷新状态</button>
         </div>
         <div class="hint mt8">
           远程网页受同源限制，不能直接读库街区 Cookie。推荐：登录后点「抓取 Token 书签」→ 在库街区页点击书签 → 回到此处「粘贴 Token」。
@@ -256,6 +259,6 @@
     </template>
   </div>
 
-  <script src="./dashboard.js"></script>
+  <script src="./dashboard.js?v=2"></script>
 </body>
 </html>

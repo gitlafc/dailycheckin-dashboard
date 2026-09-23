@@ -121,6 +121,7 @@ createApp({
     const logText = ref("");
     const tokenInfo = ref({ kuro_status: "unknown", kuro_detail: "未检测" });
     const tokenSaved = ref(!!localStorage.getItem("GH_TOKEN"));
+    const kuroTokenInput = ref(localStorage.getItem("KURO_TOKEN") || "");
 
     function applyTokenInfo(info) {
       if (info && typeof info === "object") tokenInfo.value = { ...tokenInfo.value, ...info };
@@ -176,34 +177,32 @@ createApp({
     }
 
     function pasteKuroToken() {
-      const tok = prompt(
-        "粘贴库街区 token（F12 → Network → 任意请求头 token，或书签脚本已复制）",
-        localStorage.getItem("KURO_TOKEN") || ""
-      );
-      if (!tok) return;
-      const t = tok.trim();
+      const t = (kuroTokenInput.value || "").trim();
+      if (!t) {
+        message.value = "请先在输入框粘贴 token";
+        messageKind.value = "warn";
+        return;
+      }
       if (!t.startsWith("eyJ") || t.split(".").length !== 3) {
-        message.value = "格式不像 JWT token";
+        message.value = "格式不像 JWT（应以 eyJ 开头、三段）";
         messageKind.value = "bad";
         return;
       }
       localStorage.setItem("KURO_TOKEN", t);
+      kuroTokenInput.value = t;
+      let detail = "已保存到本机浏览器";
       try {
         const part = t.split(".")[1].replace(/-/g, "+").replace(/_/g, "/");
         const pad = "=".repeat((4 - (part.length % 4)) % 4);
         const payload = JSON.parse(decodeURIComponent(escape(atob(part + pad))));
-        const created = payload.created;
-        let detail = "userId=" + payload.userId;
-        if (typeof created === "number") {
-          const age = ((Date.now() - created / 1000) / 86400).toFixed(2);
+        if (payload.userId) detail = "userId=" + payload.userId + " · " + detail;
+        if (typeof payload.created === "number") {
+          const age = ((Date.now() - payload.created / 1000) / 86400).toFixed(2);
           detail += " · " + age + "天前签发";
         }
-        applyTokenInfo({ kuro_status: "ok", kuro_detail: detail + " · 已保存到本机浏览器" });
-      } catch (_) {
-        applyTokenInfo({ kuro_status: "unknown", kuro_detail: "已保存（解析失败）" });
-      }
-      message.value =
-        "token 已保存到本机浏览器。云端定时请用本地执行 tools/update_kuro_secret.py，或在 EXE 设置里同步后保存。";
+      } catch (_) {}
+      applyTokenInfo({ kuro_status: "ok", kuro_detail: detail });
+      message.value = "Token 已保存。更新云端 Secret 请本地执行 tools/update_kuro_secret.py";
       messageKind.value = "ok";
     }
 
@@ -229,9 +228,19 @@ createApp({
     })();
 
     function openKuroLogin() {
-      window.open("https://www.kurobbs.com/", "_blank");
-      message.value = "请在浏览器登录 www.kurobbs.com，再点「同步浏览器 token」";
+      message.value = "正在打开 www.kurobbs.com …（若被拦截请手动访问）";
       messageKind.value = "ok";
+      try {
+        const a = document.createElement("a");
+        a.href = "https://www.kurobbs.com/";
+        a.target = "_blank";
+        a.rel = "noopener";
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      } catch (_) {
+        location.href = "https://www.kurobbs.com/";
+      }
     }
 
     const rateClass = computed(() => {
@@ -539,6 +548,7 @@ createApp({
       kuroSync,
       pasteKuroToken,
       loadBookmarklet,
+      kuroTokenInput,
       openKuroLogin,
       refreshTokenStatus,
     };
