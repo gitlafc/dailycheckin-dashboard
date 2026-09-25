@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-09-24T07:04:10.325Z",
-  "day": "2026-09-24",
+  "generated_at": "2026-09-25T07:00:49.440Z",
+  "day": "2026-09-25",
   "signed": 2,
   "missed": 3,
   "total": 5,
@@ -25,49 +25,49 @@
   ],
   "rewards": [
     {
-      "reward": "摩拉 ×5000",
+      "reward": "原石 ×20",
       "category": "",
       "emoji": "🎁",
       "platform": "米游社",
       "account": "原神 - 星流",
       "source": "official",
-      "icon": "https://webstatic.mihoyo.com/upload/event/2020/09/29/65bb84b6cfe567a52495cbd814dc0729_3166173192087337217.png"
+      "icon": "https://webstatic.mihoyo.com/upload/event/2020/09/29/97a77a51901207ba1c4b167d7484742b_879413631620747219.png"
     },
     {
-      "reward": "遗失碎金 ×1",
+      "reward": "信用点 ×5000",
       "category": "",
       "emoji": "🎁",
       "platform": "米游社",
       "account": "星铁 - siin",
       "source": "official",
-      "icon": "https://webstatic.mihoyo.com/upload/event/2023/03/28/4d725c03c505405212d6323a968fd00f_4657297052914853535.png"
+      "icon": "https://webstatic.mihoyo.com/upload/event/2023/03/28/0b12bdf76fa4abc6b4d1fdfc0fb4d6f5_341369206973596800.png"
     }
   ],
   "history": [
     {
-      "ts": "2026-09-24T07:04:09",
+      "ts": "2026-09-25T07:00:47",
       "platform": "米游社",
       "game": "starrail",
       "game_name": "崩坏：星穹铁道",
       "status": "success",
       "message": "「Siin」(110674507) 签到成功",
-      "reward": "遗失碎金 ×1",
+      "reward": "信用点 ×5000",
       "account": "星铁 - siin",
-      "icon_url": "https://webstatic.mihoyo.com/upload/event/2023/03/28/4d725c03c505405212d6323a968fd00f_4657297052914853535.png"
+      "icon_url": "https://webstatic.mihoyo.com/upload/event/2023/03/28/0b12bdf76fa4abc6b4d1fdfc0fb4d6f5_341369206973596800.png"
     },
     {
-      "ts": "2026-09-24T07:04:09",
+      "ts": "2026-09-25T07:00:47",
       "platform": "米游社",
       "game": "genshin",
       "game_name": "原神",
       "status": "success",
       "message": "「星流」(127540259) 签到成功",
-      "reward": "摩拉 ×5000",
+      "reward": "原石 ×20",
       "account": "原神 - 星流",
-      "icon_url": "https://webstatic.mihoyo.com/upload/event/2020/09/29/65bb84b6cfe567a52495cbd814dc0729_3166173192087337217.png"
+      "icon_url": "https://webstatic.mihoyo.com/upload/event/2020/09/29/97a77a51901207ba1c4b167d7484742b_879413631620747219.png"
     },
     {
-      "ts": "2026-09-24T07:04:09",
+      "ts": "2026-09-25T07:00:47",
       "platform": "库街区",
       "game": "forum",
       "game_name": "库街区社区",
@@ -78,7 +78,7 @@
       "icon_url": ""
     },
     {
-      "ts": "2026-09-24T07:04:09",
+      "ts": "2026-09-25T07:00:47",
       "platform": "库街区",
       "game": "pgr",
       "game_name": "战双帕弥什",
@@ -89,7 +89,7 @@
       "icon_url": ""
     },
     {
-      "ts": "2026-09-24T07:04:09",
+      "ts": "2026-09-25T07:00:47",
       "platform": "库街区",
       "game": "wuwa",
       "game_name": "鸣潮",
@@ -100,7 +100,7 @@
       "icon_url": ""
     },
     {
-      "ts": "2026-09-24T07:04:09",
+      "ts": "2026-09-25T07:00:47",
       "platform": "库街区",
       "game": "-",
       "game_name": "-",
@@ -120,10 +120,10 @@
     0,
     40
   ],
-  "log": "07:03:40 INFO 开始平台 kuro\n07:03:46 WARNING 库街区 token 仍不可用：请在浏览器登录 www.kurobbs.com 后点击「同步浏览器」，或手动更新 token（过期后服务端不接受 refresh）\n07:03:50 INFO [信息] -: token 有效 · userId=18747568 · 签发 2026-09-23 10:32\n07:03:50 INFO [过期] 鸣潮: 登录已过期，请重新登录\n07:03:50 INFO     ↳ 建议：登录态已过期：请到对应平台重新登录并复制 Cookie/Token\n07:03:50 INFO [过期] 战双帕弥什: 登录已过期，请重新登录\n07:03:50 INFO     ↳ 建议：登录态已过期：请到对应平台重新登录并复制 Cookie/Token\n07:03:50 INFO [过期] 库街区社区: 登录已过期，请重新登录\n07:03:50 INFO     ↳ 建议：登录态已过期：请到对应平台重新登录并复制 Cookie/Token\n07:03:50 INFO 开始平台 mihoyo\n07:04:09 INFO [成功] 原神 - 星流 · 原神: 「星流」(127540259) 签到成功 · 摩拉 ×5000\n07:04:09 INFO [成功] 星铁 - siin · 崩坏：星穹铁道: 「Siin」(110674507) 签到成功 · 遗失碎金 ×1\n07:04:09 INFO ── 今日奖品 ──\n07:04:09 INFO   原神 - 星流 · 原神（签到）→ 摩拉 ×5000\n07:04:09 INFO   星铁 - siin · 崩坏：星穹铁道（签到）→ 遗失碎金 ×1\n07:04:09 INFO 已写入历史 /home/runner/work/DailyCheckin/DailyCheckin/data/history.jsonl（6 条）\n07:04:09 INFO 通知[reward/windows] 签到完成 · 成功 2 失败 3 — 奖品: 摩拉 ×5000；遗失碎金 ×1 | 失败: 鸣潮 登录已过期，请重新登录；战双帕弥什 登录已过期，请重新登录\n07:04:09 INFO 通知结果: Windows 通知失败（已记日志）\n",
+  "log": "07:00:23 INFO 开始平台 kuro\n07:00:28 WARNING 库街区 token 仍不可用：请在浏览器登录 www.kurobbs.com 后点击「同步浏览器」，或手动更新 token（过期后服务端不接受 refresh）\n07:00:31 INFO [信息] -: token 有效 · userId=18747568 · 签发 2026-09-23 10:32\n07:00:31 INFO [过期] 鸣潮: 登录已过期，请重新登录\n07:00:31 INFO     ↳ 建议：登录态已过期：请到对应平台重新登录并复制 Cookie/Token\n07:00:31 INFO [过期] 战双帕弥什: 登录已过期，请重新登录\n07:00:31 INFO     ↳ 建议：登录态已过期：请到对应平台重新登录并复制 Cookie/Token\n07:00:31 INFO [过期] 库街区社区: 登录已过期，请重新登录\n07:00:31 INFO     ↳ 建议：登录态已过期：请到对应平台重新登录并复制 Cookie/Token\n07:00:31 INFO 开始平台 mihoyo\n07:00:47 INFO [成功] 原神 - 星流 · 原神: 「星流」(127540259) 签到成功 · 原石 ×20\n07:00:47 INFO [成功] 星铁 - siin · 崩坏：星穹铁道: 「Siin」(110674507) 签到成功 · 信用点 ×5000\n07:00:47 INFO ── 今日奖品 ──\n07:00:47 INFO   原神 - 星流 · 原神（签到）→ 原石 ×20\n07:00:47 INFO   星铁 - siin · 崩坏：星穹铁道（签到）→ 信用点 ×5000\n07:00:47 INFO 已写入历史 /home/runner/work/DailyCheckin/DailyCheckin/data/history.jsonl（6 条）\n07:00:47 INFO 通知[reward/windows] 签到完成 · 成功 2 失败 3 — 奖品: 原石 ×20；信用点 ×5000 | 失败: 鸣潮 登录已过期，请重新登录；战双帕弥什 登录已过期，请重新登录\n07:00:47 INFO 通知结果: Windows 通知失败（已记日志）\n",
   "token": {
     "kuro_status": "soon",
-    "kuro_detail": "userId=18747568 · 20699575.5天前签发（较旧）"
+    "kuro_detail": "userId=18747568 · 20700573.1天前签发（较旧）"
   },
   "note": "Auto-generated by DailyCheckin CI. No credentials included."
 }
