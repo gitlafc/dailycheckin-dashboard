@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-01T15:44:31.149Z",
-  "day": "2026-10-01",
+  "generated_at": "2026-10-02T07:51:26.647Z",
+  "day": "2026-10-02",
   "signed": 5,
   "missed": 0,
   "total": 5,
@@ -25,7 +25,7 @@
   ],
   "rewards": [
     {
-      "reward": "中级共鸣促剂",
+      "reward": "中级能源核心",
       "category": "",
       "emoji": "🎁",
       "platform": "库街区",
@@ -34,7 +34,7 @@
       "icon": "https://web-static.kurobbs.com/adminConfig/68/goods_icon/1724125498177.png"
     },
     {
-      "reward": "螺母",
+      "reward": "低级突破材料黑盒",
       "category": "",
       "emoji": "🎁",
       "platform": "库街区",
@@ -43,82 +43,82 @@
       "icon": "https://web-static.kurobbs.com/adminConfig/69/goods_icon/1724125228832.png"
     },
     {
-      "reward": "冒险家的经验 ×3",
+      "reward": "精锻用良矿 ×3",
       "category": "",
       "emoji": "🎁",
       "platform": "米游社",
       "account": "原神 - 星流",
       "source": "official",
-      "icon": "https://webstatic.mihoyo.com/upload/event/2020/09/29/01ba12730bd86c8858c1e2d86c7d150d_1448304511922419521.png"
+      "icon": "https://webstatic.mihoyo.com/upload/event/2020/09/29/174c57f4dfff99cc139fc7d9bc1ec866_2040518409571206704.png"
     },
     {
-      "reward": "冒险记录 ×2",
+      "reward": "凝缩以太 ×1",
       "category": "",
       "emoji": "🎁",
       "platform": "米游社",
       "account": "星铁 - siin",
       "source": "official",
-      "icon": "https://webstatic.mihoyo.com/upload/event/2023/03/28/5ec24224c0e731d65270c6f2310e84a4_297322370584807823.png"
+      "icon": "https://webstatic.mihoyo.com/upload/event/2023/03/28/6b6ff68f20a7d6d647ca02a7fe5e7a6a_4967745427313128531.png"
     }
   ],
   "history": [
     {
-      "ts": "2026-10-01T15:44:30",
+      "ts": "2026-10-02T07:51:24",
       "platform": "米游社",
       "game": "starrail",
       "game_name": "崩坏：星穹铁道",
-      "status": "already",
-      "message": "「Siin」(110674507) 今天已签到",
-      "reward": "冒险记录 ×2",
+      "status": "success",
+      "message": "「Siin」(110674507) 签到成功",
+      "reward": "凝缩以太 ×1",
       "account": "星铁 - siin",
-      "icon_url": "https://webstatic.mihoyo.com/upload/event/2023/03/28/5ec24224c0e731d65270c6f2310e84a4_297322370584807823.png"
+      "icon_url": "https://webstatic.mihoyo.com/upload/event/2023/03/28/6b6ff68f20a7d6d647ca02a7fe5e7a6a_4967745427313128531.png"
     },
     {
-      "ts": "2026-10-01T15:44:30",
+      "ts": "2026-10-02T07:51:24",
       "platform": "米游社",
       "game": "genshin",
       "game_name": "原神",
-      "status": "already",
-      "message": "「星流」(127540259) 今天已签到",
-      "reward": "冒险家的经验 ×3",
+      "status": "success",
+      "message": "「星流」(127540259) 签到成功",
+      "reward": "精锻用良矿 ×3",
       "account": "原神 - 星流",
-      "icon_url": "https://webstatic.mihoyo.com/upload/event/2020/09/29/01ba12730bd86c8858c1e2d86c7d150d_1448304511922419521.png"
+      "icon_url": "https://webstatic.mihoyo.com/upload/event/2020/09/29/174c57f4dfff99cc139fc7d9bc1ec866_2040518409571206704.png"
     },
     {
-      "ts": "2026-10-01T15:44:30",
+      "ts": "2026-10-02T07:51:24",
       "platform": "库街区",
       "game": "forum",
       "game_name": "库街区社区",
-      "status": "already",
-      "message": "今天已签到",
+      "status": "success",
+      "message": "请求成功",
       "reward": "",
       "account": "",
       "icon_url": ""
     },
     {
-      "ts": "2026-10-01T15:44:30",
+      "ts": "2026-10-02T07:51:24",
       "platform": "库街区",
       "game": "pgr",
       "game_name": "战双帕弥什",
-      "status": "already",
-      "message": "今天已签到",
-      "reward": "螺母",
+      "status": "success",
+      "message": "请求成功",
+      "reward": "低级突破材料黑盒",
       "account": "",
       "icon_url": "https://web-static.kurobbs.com/adminConfig/69/goods_icon/1724125228832.png"
     },
     {
-      "ts": "2026-10-01T15:44:30",
+      "ts": "2026-10-02T07:51:24",
       "platform": "库街区",
       "game": "wuwa",
       "game_name": "鸣潮",
-      "status": "already",
-      "message": "今天已签到",
-      "reward": "中级共鸣促剂",
+      "status": "success",
+      "message": "请求成功",
+      "reward": "中级能源核心",
       "account": "",
       "icon_url": "https://web-static.kurobbs.com/adminConfig/68/goods_icon/1724125498177.png"
     },
     {
-      "ts": "2026-10-01T15:44:30",
+      "ts": "2026-10-02T07:51:24",
       "platform": "库街区",
       "game": "-",
       "game_name": "-",
@@ -138,10 +138,10 @@
     0,
     100
   ],
-  "log": "15:43:56 INFO 开始平台 kuro\n15:44:15 INFO [信息] -: token 有效 · userId=18747568 · 签发 2026-10-01 23:18\n15:44:15 INFO [已签] 鸣潮: 今天已签到 · 中级共鸣促剂\n15:44:15 INFO [已签] 战双帕弥什: 今天已签到 · 螺母\n15:44:15 INFO [已签] 库街区社区: 今天已签到\n15:44:15 INFO 开始平台 mihoyo\n15:44:30 INFO [已签] 原神 - 星流 · 原神: 「星流」(127540259) 今天已签到 · 冒险家的经验 ×3\n15:44:30 INFO [已签] 星铁 - siin · 崩坏：星穹铁道: 「Siin」(110674507) 今天已签到 · 冒险记录 ×2\n15:44:30 INFO ── 今日奖品 ──\n15:44:30 INFO   鸣潮（已签）→ 中级共鸣促剂\n15:44:30 INFO   战双帕弥什（已签）→ 螺母\n15:44:30 INFO   原神 - 星流 · 原神（已签）→ 冒险家的经验 ×3\n15:44:30 INFO   星铁 - siin · 崩坏：星穹铁道（已签）→ 冒险记录 ×2\n15:44:30 INFO 已写入历史 /home/runner/work/DailyCheckin/DailyCheckin/data/history.jsonl（6 条）\n15:44:30 INFO 通知[reward/windows] 签到完成 · 5 项 — 奖品: 中级共鸣促剂；螺母；冒险家的经验 ×3\n15:44:30 INFO 通知结果: Windows 通知失败（已记日志）\n",
+  "log": "07:50:56 INFO 开始平台 kuro\n07:51:08 INFO [信息] -: token 有效 · userId=18747568 · 签发 2026-10-01 23:18\n07:51:08 INFO [成功] 鸣潮: 请求成功 · 中级能源核心\n07:51:08 INFO [成功] 战双帕弥什: 请求成功 · 低级突破材料黑盒\n07:51:08 INFO [成功] 库街区社区: 请求成功\n07:51:08 INFO 开始平台 mihoyo\n07:51:24 INFO [成功] 原神 - 星流 · 原神: 「星流」(127540259) 签到成功 · 精锻用良矿 ×3\n07:51:24 INFO [成功] 星铁 - siin · 崩坏：星穹铁道: 「Siin」(110674507) 签到成功 · 凝缩以太 ×1\n07:51:24 INFO ── 今日奖品 ──\n07:51:24 INFO   鸣潮（签到）→ 中级能源核心\n07:51:24 INFO   战双帕弥什（签到）→ 低级突破材料黑盒\n07:51:24 INFO   原神 - 星流 · 原神（签到）→ 精锻用良矿 ×3\n07:51:24 INFO   星铁 - siin · 崩坏：星穹铁道（签到）→ 凝缩以太 ×1\n07:51:24 INFO 已写入历史 /home/runner/work/DailyCheckin/DailyCheckin/data/history.jsonl（6 条）\n07:51:24 INFO 通知[reward/windows] 签到完成 · 5 项 — 奖品: 中级能源核心；低级突破材料黑盒；精锻用良矿 ×3\n07:51:24 INFO 通知结果: Windows 通知失败（已记日志）\n",
   "token": {
     "kuro_status": "soon",
-    "kuro_detail": "userId=18747568 · 20706928.3天前签发（较旧）"
+    "kuro_detail": "userId=18747568 · 20707599.8天前签发（较旧）"
   },
   "note": "Auto-generated by DailyCheckin CI. No credentials included."
 }
