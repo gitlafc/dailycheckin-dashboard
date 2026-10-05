@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-04T07:40:40.590Z",
-  "day": "2026-10-04",
+  "generated_at": "2026-10-05T08:08:02.478Z",
+  "day": "2026-10-05",
   "signed": 5,
   "missed": 0,
   "total": 5,
@@ -34,7 +34,7 @@
       "icon": "https://web-static.kurobbs.com/adminConfig/68/goods_icon/1724125498177.png"
     },
     {
-      "reward": "活动角色研发券",
+      "reward": "武器强化素材Ⅳ",
       "category": "",
       "emoji": "🎁",
       "platform": "库街区",
@@ -43,49 +43,49 @@
       "icon": "https://web-static.kurobbs.com/adminConfig/69/goods_icon/1724125228832.png"
     },
     {
-      "reward": "原石 ×20",
+      "reward": "甜甜花酿鸡 ×3",
       "category": "",
       "emoji": "🎁",
       "platform": "米游社",
       "account": "原神 - 星流",
       "source": "official",
-      "icon": "https://webstatic.mihoyo.com/upload/event/2020/09/29/97a77a51901207ba1c4b167d7484742b_879413631620747219.png"
+      "icon": "https://webstatic.mihoyo.com/upload/event/2021/07/29/a652b63445933e75ad1cb996c64e7ecc_9016316787307898667.png"
     },
     {
-      "reward": "罐装快乐水 ×1",
+      "reward": "星琼 ×20",
       "category": "",
       "emoji": "🎁",
       "platform": "米游社",
       "account": "星铁 - siin",
       "source": "official",
-      "icon": "https://webstatic.mihoyo.com/upload/event/2023/03/28/4aa31979af47b9f4dab8d5627f5fa8ed_5696826343029659701.png"
+      "icon": "https://webstatic.mihoyo.com/upload/event/2023/03/28/77cb5426637574ba524ac458fa963da0_8938800417123864478.png"
     }
   ],
   "history": [
     {
-      "ts": "2026-10-04T07:40:39",
+      "ts": "2026-10-05T08:08:01",
       "platform": "米游社",
       "game": "starrail",
       "game_name": "崩坏：星穹铁道",
       "status": "success",
       "message": "「Siin」(110674507) 签到成功",
-      "reward": "罐装快乐水 ×1",
+      "reward": "星琼 ×20",
       "account": "星铁 - siin",
-      "icon_url": "https://webstatic.mihoyo.com/upload/event/2023/03/28/4aa31979af47b9f4dab8d5627f5fa8ed_5696826343029659701.png"
+      "icon_url": "https://webstatic.mihoyo.com/upload/event/2023/03/28/77cb5426637574ba524ac458fa963da0_8938800417123864478.png"
     },
     {
-      "ts": "2026-10-04T07:40:39",
+      "ts": "2026-10-05T08:08:01",
       "platform": "米游社",
       "game": "genshin",
       "game_name": "原神",
       "status": "success",
       "message": "「星流」(127540259) 签到成功",
-      "reward": "原石 ×20",
+      "reward": "甜甜花酿鸡 ×3",
       "account": "原神 - 星流",
-      "icon_url": "https://webstatic.mihoyo.com/upload/event/2020/09/29/97a77a51901207ba1c4b167d7484742b_879413631620747219.png"
+      "icon_url": "https://webstatic.mihoyo.com/upload/event/2021/07/29/a652b63445933e75ad1cb996c64e7ecc_9016316787307898667.png"
     },
     {
-      "ts": "2026-10-04T07:40:39",
+      "ts": "2026-10-05T08:08:01",
       "platform": "库街区",
       "game": "forum",
       "game_name": "库街区社区",
@@ -96,18 +96,18 @@
       "icon_url": ""
     },
     {
-      "ts": "2026-10-04T07:40:39",
+      "ts": "2026-10-05T08:08:01",
       "platform": "库街区",
       "game": "pgr",
       "game_name": "战双帕弥什",
       "status": "success",
       "message": "请求成功",
-      "reward": "活动角色研发券",
+      "reward": "武器强化素材Ⅳ",
       "account": "",
       "icon_url": "https://web-static.kurobbs.com/adminConfig/69/goods_icon/1724125228832.png"
     },
     {
-      "ts": "2026-10-04T07:40:39",
+      "ts": "2026-10-05T08:08:01",
       "platform": "库街区",
       "game": "wuwa",
       "game_name": "鸣潮",
@@ -118,7 +118,7 @@
       "icon_url": "https://web-static.kurobbs.com/adminConfig/68/goods_icon/1724125498177.png"
     },
     {
-      "ts": "2026-10-04T07:40:39",
+      "ts": "2026-10-05T08:08:01",
       "platform": "库街区",
       "game": "-",
       "game_name": "-",
@@ -138,10 +138,10 @@
     0,
     100
   ],
-  "log": "07:40:06 INFO 开始平台 kuro\n07:40:22 INFO [信息] -: token 有效 · userId=18747568 · 签发 2026-10-01 23:18\n07:40:22 INFO [成功] 鸣潮: 请求成功 · 贝币\n07:40:22 INFO [成功] 战双帕弥什: 请求成功 · 活动角色研发券\n07:40:22 INFO [成功] 库街区社区: 请求成功\n07:40:22 INFO 开始平台 mihoyo\n07:40:39 INFO [成功] 原神 - 星流 · 原神: 「星流」(127540259) 签到成功 · 原石 ×20\n07:40:39 INFO [成功] 星铁 - siin · 崩坏：星穹铁道: 「Siin」(110674507) 签到成功 · 罐装快乐水 ×1\n07:40:39 INFO ── 今日奖品 ──\n07:40:39 INFO   鸣潮（签到）→ 贝币\n07:40:39 INFO   战双帕弥什（签到）→ 活动角色研发券\n07:40:39 INFO   原神 - 星流 · 原神（签到）→ 原石 ×20\n07:40:39 INFO   星铁 - siin · 崩坏：星穹铁道（签到）→ 罐装快乐水 ×1\n07:40:39 INFO 已写入历史 /home/runner/work/DailyCheckin/DailyCheckin/data/history.jsonl（6 条）\n07:40:39 INFO 通知[reward/windows] 签到完成 · 5 项 — 奖品: 贝币；活动角色研发券；原石 ×20\n07:40:39 INFO 通知结果: Windows 通知失败（已记日志）\n",
+  "log": "08:07:28 INFO 开始平台 kuro\n08:07:40 INFO [信息] -: token 有效 · userId=18747568 · 签发 2026-10-01 23:18\n08:07:40 INFO [成功] 鸣潮: 请求成功 · 贝币\n08:07:40 INFO [成功] 战双帕弥什: 请求成功 · 武器强化素材Ⅳ\n08:07:40 INFO [成功] 库街区社区: 请求成功\n08:07:40 INFO 开始平台 mihoyo\n08:08:01 INFO [成功] 原神 - 星流 · 原神: 「星流」(127540259) 签到成功 · 甜甜花酿鸡 ×3\n08:08:01 INFO [成功] 星铁 - siin · 崩坏：星穹铁道: 「Siin」(110674507) 签到成功 · 星琼 ×20\n08:08:01 INFO ── 今日奖品 ──\n08:08:01 INFO   鸣潮（签到）→ 贝币\n08:08:01 INFO   战双帕弥什（签到）→ 武器强化素材Ⅳ\n08:08:01 INFO   原神 - 星流 · 原神（签到）→ 甜甜花酿鸡 ×3\n08:08:01 INFO   星铁 - siin · 崩坏：星穹铁道（签到）→ 星琼 ×20\n08:08:01 INFO 已写入历史 /home/runner/work/DailyCheckin/DailyCheckin/data/history.jsonl（6 条）\n08:08:01 INFO 通知[reward/windows] 签到完成 · 5 项 — 奖品: 贝币；武器强化素材Ⅳ；甜甜花酿鸡 ×3\n08:08:01 INFO 通知结果: Windows 通知失败（已记日志）\n",
   "token": {
     "kuro_status": "soon",
-    "kuro_detail": "userId=18747568 · 20709592.3天前签发（较旧）"
+    "kuro_detail": "userId=18747568 · 20710611.3天前签发（较旧）"
   },
   "note": "Auto-generated by DailyCheckin CI. No credentials included."
 }
