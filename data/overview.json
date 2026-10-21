@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-20T07:01:50.885Z",
-  "day": "2026-10-20",
+  "generated_at": "2026-10-21T06:54:54.887Z",
+  "day": "2026-10-21",
   "signed": 5,
   "missed": 0,
   "total": 5,
@@ -25,7 +25,7 @@
   ],
   "rewards": [
     {
-      "reward": "中级共鸣促剂",
+      "reward": "星声",
       "category": "",
       "emoji": "🎁",
       "platform": "库街区",
@@ -34,7 +34,7 @@
       "icon": "https://web-static.kurobbs.com/adminConfig/68/goods_icon/1724125498177.png"
     },
     {
-      "reward": "意识强化素材Ⅳ",
+      "reward": "高级突破材料黑盒",
       "category": "",
       "emoji": "🎁",
       "platform": "库街区",
@@ -43,49 +43,49 @@
       "icon": "https://web-static.kurobbs.com/adminConfig/69/goods_icon/1724125228832.png"
     },
     {
-      "reward": "冒险家的经验 ×3",
+      "reward": "摩拉 ×8000",
       "category": "",
       "emoji": "🎁",
       "platform": "米游社",
       "account": "原神 - 星流",
       "source": "official",
-      "icon": "https://webstatic.mihoyo.com/upload/event/2020/09/29/01ba12730bd86c8858c1e2d86c7d150d_1448304511922419521.png"
+      "icon": "https://webstatic.mihoyo.com/upload/event/2020/09/29/65bb84b6cfe567a52495cbd814dc0729_3166173192087337217.png"
     },
     {
-      "reward": "星琼 ×20",
+      "reward": "冒险记录 ×3",
       "category": "",
       "emoji": "🎁",
       "platform": "米游社",
       "account": "星铁 - siin",
       "source": "official",
-      "icon": "https://webstatic.mihoyo.com/upload/event/2023/03/28/77cb5426637574ba524ac458fa963da0_8938800417123864478.png"
+      "icon": "https://webstatic.mihoyo.com/upload/event/2023/03/28/5ec24224c0e731d65270c6f2310e84a4_297322370584807823.png"
     }
   ],
   "history": [
     {
-      "ts": "2026-10-20T07:01:49",
+      "ts": "2026-10-21T06:54:53",
       "platform": "米游社",
       "game": "starrail",
       "game_name": "崩坏：星穹铁道",
       "status": "success",
       "message": "「Siin」(110674507) 签到成功",
-      "reward": "星琼 ×20",
+      "reward": "冒险记录 ×3",
       "account": "星铁 - siin",
-      "icon_url": "https://webstatic.mihoyo.com/upload/event/2023/03/28/77cb5426637574ba524ac458fa963da0_8938800417123864478.png"
+      "icon_url": "https://webstatic.mihoyo.com/upload/event/2023/03/28/5ec24224c0e731d65270c6f2310e84a4_297322370584807823.png"
     },
     {
-      "ts": "2026-10-20T07:01:49",
+      "ts": "2026-10-21T06:54:53",
       "platform": "米游社",
       "game": "genshin",
       "game_name": "原神",
       "status": "success",
       "message": "「星流」(127540259) 签到成功",
-      "reward": "冒险家的经验 ×3",
+      "reward": "摩拉 ×8000",
       "account": "原神 - 星流",
-      "icon_url": "https://webstatic.mihoyo.com/upload/event/2020/09/29/01ba12730bd86c8858c1e2d86c7d150d_1448304511922419521.png"
+      "icon_url": "https://webstatic.mihoyo.com/upload/event/2020/09/29/65bb84b6cfe567a52495cbd814dc0729_3166173192087337217.png"
     },
     {
-      "ts": "2026-10-20T07:01:49",
+      "ts": "2026-10-21T06:54:53",
       "platform": "库街区",
       "game": "forum",
       "game_name": "库街区社区",
@@ -96,29 +96,29 @@
       "icon_url": ""
     },
     {
-      "ts": "2026-10-20T07:01:49",
+      "ts": "2026-10-21T06:54:53",
       "platform": "库街区",
       "game": "pgr",
       "game_name": "战双帕弥什",
       "status": "success",
       "message": "请求成功",
-      "reward": "意识强化素材Ⅳ",
+      "reward": "高级突破材料黑盒",
       "account": "",
       "icon_url": "https://web-static.kurobbs.com/adminConfig/69/goods_icon/1724125228832.png"
     },
     {
-      "ts": "2026-10-20T07:01:49",
+      "ts": "2026-10-21T06:54:53",
       "platform": "库街区",
       "game": "wuwa",
       "game_name": "鸣潮",
       "status": "success",
       "message": "请求成功",
-      "reward": "中级共鸣促剂",
+      "reward": "星声",
       "account": "",
       "icon_url": "https://web-static.kurobbs.com/adminConfig/68/goods_icon/1724125498177.png"
     },
     {
-      "ts": "2026-10-20T07:01:49",
+      "ts": "2026-10-21T06:54:53",
       "platform": "库街区",
       "game": "-",
       "game_name": "-",
@@ -138,10 +138,10 @@
     0,
     100
   ],
-  "log": "07:01:16 INFO 开始平台 kuro\n07:01:28 INFO [信息] -: token 有效 · userId=18747568 · 签发 2026-10-01 23:18\n07:01:28 INFO [成功] 鸣潮: 请求成功 · 中级共鸣促剂\n07:01:28 INFO [成功] 战双帕弥什: 请求成功 · 意识强化素材Ⅳ\n07:01:28 INFO [成功] 库街区社区: 请求成功\n07:01:28 INFO 开始平台 mihoyo\n07:01:49 INFO [成功] 原神 - 星流 · 原神: 「星流」(127540259) 签到成功 · 冒险家的经验 ×3\n07:01:49 INFO [成功] 星铁 - siin · 崩坏：星穹铁道: 「Siin」(110674507) 签到成功 · 星琼 ×20\n07:01:49 INFO ── 今日奖品 ──\n07:01:49 INFO   鸣潮（签到）→ 中级共鸣促剂\n07:01:49 INFO   战双帕弥什（签到）→ 意识强化素材Ⅳ\n07:01:49 INFO   原神 - 星流 · 原神（签到）→ 冒险家的经验 ×3\n07:01:49 INFO   星铁 - siin · 崩坏：星穹铁道（签到）→ 星琼 ×20\n07:01:49 INFO 已写入历史 /home/runner/work/DailyCheckin/DailyCheckin/data/history.jsonl（6 条）\n07:01:49 INFO 通知[reward/windows] 签到完成 · 5 项 — 奖品: 中级共鸣促剂；意识强化素材Ⅳ；冒险家的经验 ×3\n07:01:49 INFO 通知结果: Windows 通知失败（已记日志）\n",
+  "log": "06:54:15 INFO 开始平台 kuro\n06:54:30 INFO [信息] -: token 有效 · userId=18747568 · 签发 2026-10-01 23:18\n06:54:30 INFO [成功] 鸣潮: 请求成功 · 星声\n06:54:30 INFO [成功] 战双帕弥什: 请求成功 · 高级突破材料黑盒\n06:54:30 INFO [成功] 库街区社区: 请求成功\n06:54:30 INFO 开始平台 mihoyo\n06:54:53 INFO [成功] 原神 - 星流 · 原神: 「星流」(127540259) 签到成功 · 摩拉 ×8000\n06:54:53 INFO [成功] 星铁 - siin · 崩坏：星穹铁道: 「Siin」(110674507) 签到成功 · 冒险记录 ×3\n06:54:53 INFO ── 今日奖品 ──\n06:54:53 INFO   鸣潮（签到）→ 星声\n06:54:53 INFO   战双帕弥什（签到）→ 高级突破材料黑盒\n06:54:53 INFO   原神 - 星流 · 原神（签到）→ 摩拉 ×8000\n06:54:53 INFO   星铁 - siin · 崩坏：星穹铁道（签到）→ 冒险记录 ×3\n06:54:53 INFO 已写入历史 /home/runner/work/DailyCheckin/DailyCheckin/data/history.jsonl（6 条）\n06:54:53 INFO 通知[reward/windows] 签到完成 · 5 项 — 奖品: 星声；高级突破材料黑盒；摩拉 ×8000\n06:54:53 INFO 通知结果: Windows 通知失败（已记日志）\n",
   "token": {
     "kuro_status": "soon",
-    "kuro_detail": "userId=18747568 · 20725565.3天前签发（较旧）"
+    "kuro_detail": "userId=18747568 · 20726560.5天前签发（较旧）"
   },
   "note": "Auto-generated by DailyCheckin CI. No credentials included."
 }
